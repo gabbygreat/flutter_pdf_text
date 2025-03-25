@@ -2,7 +2,8 @@ group = "com.example.flutter_pdf_text"
 version = "1.0-SNAPSHOT"
 
 buildscript {
-    ext.kotlin_version = "1.9.22"
+    ext.kotlin_version = "2.1.10"
+    
     repositories {
         google()
         mavenCentral()
@@ -27,7 +28,6 @@ apply plugin: "kotlin-android"
 
 android {
     namespace = "com.example.flutter_pdf_text"
-
     compileSdk = 35
 
     compileOptions {
@@ -45,14 +45,11 @@ android {
 
     defaultConfig {
         minSdk = 16
-    }
-
-    dependencies {
-        testImplementation("org.jetbrains.kotlin:kotlin-test")
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 }
 
-dependencies{
+dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.tom-roush:pdfbox-android:2.0.27.0'
     // https://stackoverflow.com/a/78592862
